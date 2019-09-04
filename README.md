@@ -8,13 +8,16 @@ Step 2. Initialize the folder with git and a virtualenv
 $ git init        # initializes an empty git repo
 $ virtualenv venv # creates a virtualenv called "venv"
 $ source venv/bin/activate # uses the virtualenv
+
 virtualenv creates a fresh Python instance. You will need to reinstall your app's dependencies with this virtualenv:
 
 $ pip install dash
 $ pip install plotly
+
 You will also need a new dependency, gunicorn, for deploying the app:
 
 $ pip install gunicorn
+
 Step 3. Initialize the folder with a sample app (app.py), a .gitignore file, requirements.txt, and a Procfile for deployment
 
 Create the following files in your project folder:
@@ -66,6 +69,7 @@ requirements.txt
 requirements.txt describes your Python dependencies. You can fill this file in automatically with:
 
 $ pip freeze > requirements.txt
+
 4. Initialize Heroku, add files to Git, and deploy
 
 $ heroku create my-dash-app # change my-dash-app to a unique name
@@ -73,6 +77,7 @@ $ git add . # add all files to git
 $ git commit -m 'Initial app boilerplate'
 $ git push heroku master # deploy code to heroku
 $ heroku ps:scale web=1  # run the app with a 1 heroku "dyno"
+
 You should be able to view your app at https://my-dash-app.herokuapp.com (changing my-dash-app to the name of your app).
 
 5. Update the code and redeploy
