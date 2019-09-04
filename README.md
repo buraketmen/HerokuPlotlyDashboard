@@ -22,52 +22,20 @@ Step 3. Initialize the folder with a sample app (app.py), a .gitignore file, req
 
 Create the following files in your project folder:
 
-app.py
+app.py (include plotly dash code)
 
-import os
-
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-
-external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
-server = app.server
-
-app.layout = html.Div([
-    html.H2('Hello World'),
-    dcc.Dropdown(
-        id='dropdown',
-        options=[{'label': i, 'value': i} for i in ['LA', 'NYC', 'MTL']],
-        value='LA'
-    ),
-    html.Div(id='display-value')
-])
-
-@app.callback(dash.dependencies.Output('display-value', 'children'),
-              [dash.dependencies.Input('dropdown', 'value')])
-def display_value(value):
-    return 'You have selected "{}"'.format(value)
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
 .gitignore
+    venv
+    *.pyc
+    .DS_Store
+    .env
 
-venv
-*.pyc
-.DS_Store
-.env
 Procfile
-
-web: gunicorn app:server
+    web: gunicorn app:server
+   
 (Note that app refers to the filename app.py. server refers to the variable server inside that file).
 
-requirements.txt
-
-requirements.txt describes your Python dependencies. You can fill this file in automatically with:
-
+requirements.txt (Describes your Python dependencies. You can fill this file in automatically with)
 $ pip freeze > requirements.txt
 
 4. Initialize Heroku, add files to Git, and deploy
