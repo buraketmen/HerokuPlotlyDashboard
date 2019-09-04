@@ -1,8 +1,9 @@
 # HerokuPlotlyDashboard
 Step 1. Create a new folder for your project:
-
+```ruby
 $ mkdir dash_app_example
 $ cd dash_app_example
+```
 
 Step 2. Initialize the folder with git and a virtualenv
 
