@@ -1,5 +1,6 @@
 # HerokuPlotlyDashboard
 http://churnintelecoms-dashboard.herokuapp.com/
+
 Step 1. Create a new folder for your project:
 ```ruby
 $ mkdir dash_app_example
